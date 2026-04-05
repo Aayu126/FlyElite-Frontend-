@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Booking from './components/Booking'
 import Story from './components/Story'
@@ -71,6 +72,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <Navbar />
       <MouseFollower />
       {/* Global Grain Texture for Premium Feel */}
       <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] grayscale bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
