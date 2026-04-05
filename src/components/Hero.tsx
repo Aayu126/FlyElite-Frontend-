@@ -50,7 +50,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-white/80 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-8'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-white/90 backdrop-blur-md py-4 shadow-sm' : 'bg-white lg:bg-transparent py-6 lg:py-8'}`}>
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
           <div className="w-10 h-10 rounded-full border-2 border-gray-900 flex items-center justify-center group-hover:bg-gray-900 group-hover:text-white transition-all">
@@ -89,15 +89,15 @@ const Navbar = () => {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              className="fixed inset-0 bg-white z-[100] flex flex-col p-12"
+              className="fixed inset-0 !bg-white !opacity-100 z-[1000] flex flex-col p-8 sm:p-12 backdrop-blur-none"
             >
-              <div className="flex justify-between items-center mb-16">
+              <div className="flex justify-between items-center mb-12 sm:mb-16">
                 <span className="text-xl font-black">FlyElite</span>
-                <button onClick={() => setMobileMenuOpen(false)}><X size={32} /></button>
+                <button onClick={() => setMobileMenuOpen(false)} className="p-2 -mr-2"><X size={32} /></button>
               </div>
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-6 sm:gap-8 overflow-y-auto">
                 {menuItems.map((item) => (
-                  <Link key={item.name} to={item.path} onClick={() => handleLinkClick(item.path)} className="text-4xl font-black text-gray-900 hover:text-gray-400 transition-colors uppercase italic">{item.name}</Link>
+                  <Link key={item.name} to={item.path} onClick={() => handleLinkClick(item.path)} className="text-3xl sm:text-4xl font-black text-gray-900 hover:text-gray-400 transition-colors uppercase italic">{item.name}</Link>
                 ))}
               </div>
             </motion.div>
@@ -129,7 +129,7 @@ const Hero = () => {
         <div className="space-y-4">
           <h1 className="text-4xl sm:text-6xl md:text-[120px] lg:text-[160px] font-black text-gray-900 tracking-tighter leading-[0.9] mb-8 sm:mb-12">
             <div className="overflow-hidden py-10 -my-10">
-              <motion.span 
+              <motion.span
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.2, ease: [0.6, 0.05, -0.01, 0.9] }}
@@ -139,7 +139,7 @@ const Hero = () => {
               </motion.span>
             </div>
             <div className="overflow-hidden py-10 -my-10">
-              <motion.span 
+              <motion.span
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.2, delay: 0.2, ease: [0.6, 0.05, -0.01, 0.9] }}
